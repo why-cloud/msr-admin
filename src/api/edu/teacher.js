@@ -7,7 +7,33 @@ export default {
     return request({
       url: `${api_name}/${page}/${limit}`,
       method: 'get',
-      data: searchObj
+      params: searchObj
+    })
+  },
+  removeById(teacherId) {
+    return request({
+      url: `${api_name}/${teacherId}`,
+      method: 'delete'
+    })
+  },
+  save(teacher) {
+    return request({
+      url: `${api_name}/save`,
+      method: 'post',
+      data: teacher
+    })
+  },
+  getById(id) {
+    return request({
+      url: `${api_name}/${id}`,
+      method: 'get'
+    })
+  },
+  updateById(teacher) {
+    return request({
+      url: `${api_name}/${teacher.id}`,
+      method: 'put',
+      data: teacher
     })
   }
 }
